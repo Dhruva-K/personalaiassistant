@@ -1,0 +1,19 @@
+[tool]
+name = "langgraph-agent"
+version = "0.1.0"
+description = "A langgraph agent that can access various tools and determine which tools to invoke based on incoming requests."
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+langchain = "^0.0.1"  # Adjust version as necessary
+langgraph = "^0.0.1"  # Adjust version as necessary
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.0"
+pytest-cov = "^2.10"

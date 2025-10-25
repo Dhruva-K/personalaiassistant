@@ -62,3 +62,11 @@ langgraph-agent/src/config/*.pyc
 credentials.json
 token.pickle
 chroma_db/
+
+# Secrets and credentials
+secrets/
+*.pickle
+*.json
+!.devcontainer/*.json
+
+

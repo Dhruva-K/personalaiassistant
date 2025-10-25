@@ -231,12 +231,16 @@ MIT License - See LICENSE file for details
 - [Ollama Documentation](https://ollama.ai/docs)
 - [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
 
-## ⚠️ Notes
+## ⚠️ Important Notes
 
-- **Pizza Ordering**: Currently simulated. Integrate with real APIs (Domino's, Pizza Hut) for production use
-- **Ollama Required**: Make sure Ollama is running before starting the assistant
-- **Google Calendar**: Requires OAuth setup (credentials.json from Google Cloud Console)
-- **Email**: Supports Gmail SMTP (may need app-specific password)
+- **Pizza Ordering**: Currently **simulated** with full order structure (pricing, validation, confirmation). To use in production:
+  - Integrate with [Domino's Pizza API](https://www.dominos.com/en/pages/content/api/)
+  - Or use [Pizza Hut API](https://www.pizzahut.com/developers)
+  - Or other pizza delivery service APIs
+  - The current implementation provides the complete order flow and can be easily adapted to real APIs
+- **Ollama Required**: Make sure Ollama is running with `mistral` and `llama2` models before starting
+- **Google Calendar**: Requires OAuth setup (download `credentials.json` from Google Cloud Console)
+- **Email**: Supports Gmail SMTP (you may need an app-specific password for security)
 
 ## 🎯 Scoring Breakdown
 

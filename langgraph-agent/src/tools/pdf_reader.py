@@ -4,7 +4,7 @@ from PyPDF2 import PdfReader
 from langchain_community.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import Chroma
-from ..privacy.privacy_manager import PrivacyManager
+from privacy.privacy_manager import PrivacyManager
 
 class PDFReader:
     """Tool for reading and analyzing PDF documents."""

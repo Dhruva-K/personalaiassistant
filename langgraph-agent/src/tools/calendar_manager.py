@@ -7,7 +7,7 @@ from googleapiclient.discovery import build
 from pathlib import Path
 import pickle
 import os
-from ..privacy.privacy_manager import PrivacyManager
+from privacy.privacy_manager import PrivacyManager
 
 class CalendarManager:
     """Tool for scheduling and managing meetings using Google Calendar."""

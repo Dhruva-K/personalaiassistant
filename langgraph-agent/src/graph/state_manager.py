@@ -1,8 +1,8 @@
 from typing import TypedDict, List, Dict, Any
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
-from langgraph.graph import StateGraph, END
-from ..tools.tool_registry import ToolRegistry
-from ..agents.base_agent import BaseAgent
+from langgraph.graph import StateGraph, END, START
+from tools.tool_registry import ToolRegistry
+from agents.base_agent import BaseAgent
 
 
 class AgentState(TypedDict):
@@ -32,6 +32,7 @@ class StateManager:
         workflow.add_node("generate_response", self._generate_response)
 
         # Define the edges between nodes
+        workflow.add_edge(START, "process_input")
         workflow.add_edge("process_input", "execute_tool")
         workflow.add_edge("execute_tool", "generate_response")
         workflow.add_edge("generate_response", END)

@@ -1,7 +1,10 @@
 import sys
 import os
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'langgraph-agent', 'src'))
+src_path = os.path.join(os.path.dirname(__file__), 'langgraph-agent', 'src')
+sys.path.insert(0, src_path)
+
+os.chdir(src_path)
 
 from agents.base_agent import BaseAgent
 from tools.tool_registry import create_tool_registry
@@ -26,6 +29,8 @@ def main():
             print("\nAssistant:", response)
         except Exception as e:
             print(f"\nError: {str(e)}")
+            import traceback
+            traceback.print_exc()
 
 
 if __name__ == "__main__":

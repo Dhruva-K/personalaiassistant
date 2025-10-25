@@ -4,7 +4,7 @@ import requests
 import json
 from pathlib import Path
 from pydantic import BaseModel
-from ..privacy.privacy_manager import PrivacyManager
+from privacy.privacy_manager import PrivacyManager
 
 class Size(str, Enum):
     SMALL = "small"

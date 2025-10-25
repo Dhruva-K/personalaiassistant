@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import smtplib
 import os
-from ..privacy.privacy_manager import PrivacyManager
+from privacy.privacy_manager import PrivacyManager
 from pydantic import BaseModel, EmailStr
 
 class EmailConfig(BaseModel):

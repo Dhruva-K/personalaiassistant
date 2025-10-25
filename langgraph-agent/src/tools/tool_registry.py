@@ -62,6 +62,12 @@ class OrderTool(BaseTool):
         return {"status": "success", "message": "Pizza order placed successfully"}
 
 
+class GeneralQueryTool(BaseTool):
+    def execute(self, parameters: Dict[str, Any]) -> Any:
+        # Handle general queries
+        return {"status": "success", "message": "I can help you with emails, PDFs, scheduling, searching, or ordering pizza. What would you like to do?"}
+
+
 def create_tool_registry() -> ToolRegistry:
     """Create and initialize the tool registry with all available tools"""
     registry = ToolRegistry()
@@ -72,5 +78,6 @@ def create_tool_registry() -> ToolRegistry:
     registry.register_tool("calendar_tool", CalendarTool())
     registry.register_tool("search_tool", SearchTool())
     registry.register_tool("order_tool", OrderTool())
+    registry.register_tool("general_query_tool", GeneralQueryTool())
 
     return registry

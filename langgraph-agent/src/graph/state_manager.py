@@ -46,8 +46,11 @@ class StateManager:
 
         # Use the agent to decide which tool to use
         tool = self.agent.decide_tool({"input": latest_message.content})
+        
+        # If tool is None, use general_query_tool
+        tool_id = "general_query_tool" if tool is None else tool.__class__.__name__.replace("Tool", "").lower() + "_tool"
 
-        return {**state, "current_tool": tool, "next_step": "execute_tool"}
+        return {**state, "current_tool": tool_id, "next_step": "execute_tool"}
 
     def _execute_tool(self, state: AgentState) -> AgentState:
         """Execute the selected tool"""
